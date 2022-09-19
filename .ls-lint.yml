@@ -1,0 +1,20 @@
+ls: 
+  .dir: kebab-case
+  .js: kebab-case
+  .css: kebab-case
+  .html: kebab-case
+  .json: kebab-case
+  .ts: kebab-case
+  .d.ts: kebab-case
+  .tsx: PascalCase
+ 
+ignore:
+  - node_modules
+  - scripts
+  - config
+  - build
+  - dev
+  - .git
+  - .husky
+  - .github
+  - .prettierrc.js
