@@ -6,10 +6,18 @@ type IFetchOptions = {
   baseUrl?: string;
 } & IRequestInit;
 
+interface IFetchResponseContent<T> {
+  code: number;
+  message: string;
+  content: T;
+}
+
 const isDev = true;
 
 
-const fetch = <T>(url: string, options: IFetchOptions): Promise<T> => {
+const fetch = <T = object>(url: string, options: IFetchOptions): Promise<
+  IFetchResponseContent<T>
+> => {
   const baseUrl = options.baseUrl || (
     isDev ? 'http://localhost' : ''
   );
@@ -18,12 +26,14 @@ const fetch = <T>(url: string, options: IFetchOptions): Promise<T> => {
   const instance = window.fetch(fetchUrl, options);
 
   return instance.then((response) => {
-    return response.text();
+    return response.text().then((content) => {
+      return JSON.parse(content);
+    });
   }).catch((error) => {
     console['error'](error);
   }).finally(() => {
     console.log('fetch log');
-  }) as Promise<T>;
+  });
 };
 
 export default fetch;
