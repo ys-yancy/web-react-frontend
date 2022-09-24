@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import os, sys, getopt;
 
@@ -107,5 +107,5 @@ def init(argv):
     create_component(dir_name, component_name);
 
 
-if __name__ == "__main__":
+if __name__ == '__main__:
   init(sys.argv[1:]);
