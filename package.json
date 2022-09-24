@@ -2,6 +2,22 @@
   "name": "web-react-frontend",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "gc": "./scripts/createComponent.py",
+    "pre-commit": "ls-lint --config .ls-lint.yaml && lint-staged",
+    "commit-msg": "node scripts/verifyCommit.js",
+    "postinstall": "husky install"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
   "dependencies": {
     "@babel/core": "^7.16.0",
     "@ls-lint/ls-lint": "^1.11.2",
@@ -70,14 +86,6 @@
     "webpack-manifest-plugin": "^4.0.2",
     "whatwg-fetch": "^3.6.2",
     "workbox-webpack-plugin": "^6.4.1"
-  },
-  "scripts": {
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "gc": "./scripts/createComponent.py",
-    "pre-commit": "ls-lint --config .ls-lint.yaml && lint-staged",
-    "commit-msg": "node scripts/verifyCommit.js",
-    "postinstall": "husky install"
   },
   "eslintConfig": {
     "extends": [

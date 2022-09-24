@@ -1,7 +1,7 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import ContextProvider from './context/Context';
-import MobileRouter from './router/MobileRouter';
+import Router from './router';
 import './scss/reset.css';
 
 export default function startRun() {
@@ -10,7 +10,7 @@ export default function startRun() {
   ).render(
     <React.StrictMode>
       <ContextProvider>
-        <MobileRouter />
+        <Router />
       </ContextProvider>
     </React.StrictMode>
   );

@@ -2,8 +2,8 @@ import React, {Suspense} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import MobileHeader from 'business-components/mobile-header';
 import MobileMenu from 'business-components/mobile-menu';
+import useInitialize from 'context/hooks/use-initialize';
 import contents from 'src/content';
-import {useInitialize} from './mobile-hooks';
 import './mobile-style.scss';
 
 const content = contents.map(([path, Component]) => {
@@ -12,11 +12,11 @@ const content = contents.map(([path, Component]) => {
 
 // mobile router
 const Router: React.FC = () => {
-  const basicInfo = useInitialize();
+  const state = useInitialize();
 
   return (
     <BrowserRouter>
-      <MobileHeader name={basicInfo?.name} />
+      <MobileHeader name={state?.name} />
       <div className="mobile-router-content">
         <Suspense fallback>
           <Routes>{content}</Routes>

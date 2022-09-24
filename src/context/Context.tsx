@@ -8,7 +8,9 @@ interface IContextProvider {
 const ContextProvider: React.FC<IContextProvider> = ({children}) => {
   const [state, dispatch] = useReducer(reducer, initState);
   return (
-    <ContextState.Provider value={{ state, dispatch }}>{children}</ContextState.Provider>
+    <ContextState.Provider value={{state, dispatch}}>
+      {children}
+    </ContextState.Provider>
   );
 };
 

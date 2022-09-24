@@ -21,6 +21,7 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
+      "@/*": ["src/*"],
       "src/*": ["src/*"],
       "base/*": ["src/base/*"],
       "scss/*": ["src/scss/*"],

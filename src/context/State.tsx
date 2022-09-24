@@ -1,13 +1,15 @@
 import React from 'react';
 
 export type State = {
-  test: string;
+  name: string;
+  terminal: 'mobile' | 'web';
 };
 
 export const noop = () => {};
 
 export const initState = {
-  test: '1',
+  name: 'Loading...',
+  terminal: 'mobile' as const,
 };
 
 export const ContextState = React.createContext<{
