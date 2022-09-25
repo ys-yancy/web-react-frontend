@@ -6,14 +6,16 @@ src_dirname = 'src';
 style_dir_name = '/style';
 default_file_content = '// Automatic generated \n';
 
+def contains(target, value):
+  return value.find(target) != -1;
 
 # 获取要创建的文件及文件夹
 def get_component_files(component_dirname, name):
   use_name = name;
 
-  # name: mobile-header -> header
+  # name: mobile-header -> header custom-header -> custom-header
   try:
-    if name.find('-'):
+    if contains('-', name) and contains('mobile', name):
       split_names = name.split('-', 1);
       if split_names[1] != '':
         use_name = split_names[1];
@@ -107,5 +109,5 @@ def init(argv):
     create_component(dir_name, component_name);
 
 
-if __name__ == '__main__:
+if __name__ == '__main__':
   init(sys.argv[1:]);

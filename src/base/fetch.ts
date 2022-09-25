@@ -1,9 +1,15 @@
 import 'whatwg-fetch';
+import * as location from './location';
 
 type IRequestInit = Parameters<typeof window.fetch>[1];
 
+type IRequestQuery = {
+  [key: string]: string | number;
+}
+
 type IFetchOptions = {
   baseUrl?: string;
+  query?: IRequestQuery;
 } & IRequestInit;
 
 interface IFetchResponseContent<T> {
@@ -18,10 +24,13 @@ const isDev = true;
 const fetch = <T = object>(url: string, options: IFetchOptions): Promise<
   IFetchResponseContent<T>
 > => {
+  const query = location.queryString(options.query);
   const baseUrl = options.baseUrl || (
     isDev ? 'http://localhost' : ''
   );
-  const fetchUrl = baseUrl + url;
+  const fetchUrl = baseUrl + url + (
+    query ? `?${query}` : ''
+  );
 
   const instance = window.fetch(fetchUrl, options);
 
