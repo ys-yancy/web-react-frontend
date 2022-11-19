@@ -1,6 +1,6 @@
 export const shouldShowMenus = [
   {
-    key: '/home',
+    key: '/portal',
     title: '首页',
   },
   {

@@ -3,6 +3,7 @@ import fetch from 'base/fetch';
 type ICommodities = {
   order: number;
   name: string;
+  image: string;
   price: string;
   arrivalTime: string;
   storeName: string;

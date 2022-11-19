@@ -28,7 +28,7 @@ const fetch = <T = object>(url: string, options: IFetchOptions): Promise<
   const baseUrl = options.baseUrl || (
     isDev ? 'http://localhost' : ''
   );
-  const fetchUrl = baseUrl + url + (
+  const fetchUrl = (url.startsWith('http') ? '' : baseUrl) + url + (
     query ? `?${query}` : ''
   );
 
