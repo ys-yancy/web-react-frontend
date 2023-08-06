@@ -1,4 +1,3 @@
-// Automatic generated 
-import Header from './Header';
+import MobileHeader from './Header';
 
-export default Header;
+export default MobileHeader;

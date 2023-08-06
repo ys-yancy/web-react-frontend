@@ -1,10 +1,9 @@
-import React, {Suspense} from 'react';
+import React, {Suspense, useEffect} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
-import MobileHeader from 'components/mobile-header';
-import MobileMenu from 'components/mobile-menu';
-import useInitialize from 'context/hooks/use-initialize';
+import MobileHeader from '@/components/header';
+import MobileMenu from '@/components/menu';
+import useInitialize from '@/context/hooks/initialize';
 import contents from 'src/content';
-import './mobile-style.scss';
 
 const content = contents.map(([path, Component]) => {
   return <Route path={path} element={<Component />} key={path} />;
@@ -17,7 +16,7 @@ const Router: React.FC = () => {
   return (
     <BrowserRouter>
       <MobileHeader name={state?.name} />
-      <div className="mobile-router-content">
+      <div className="root-content">
         <Suspense fallback>
           <Routes>{content}</Routes>
         </Suspense>

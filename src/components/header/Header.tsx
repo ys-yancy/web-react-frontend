@@ -1,21 +1,18 @@
-// Automatic generated 
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {Menu} from 'antd';
-import {shouldShowMenus} from './shared';
+import {NavBar} from 'antd-mobile';
 import './style';
 
-interface IHeaderProps {
+export interface IHeaderProps {
   name?: string;
 }
 
-const Header: React.FC<IHeaderProps> = (props) => {
-  const menuItems = shouldShowMenus.map((item) => ({
-    key: item.key,
-    label: <Link to={item.key}>{item.title}</Link>
-  }));
+const Header: React.FC<IHeaderProps> = ({
+  name,
+}) => {
   return (
-    <Menu mode="horizontal" className="menu" items={menuItems} />
+    <NavBar className="mobile-header" back={null}>
+      <span>{name || '加载中...' }</span>
+    </NavBar>
   );
 };
 

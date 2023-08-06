@@ -2,6 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import ContextProvider from './context/Context';
 import Router from './router';
+import './scss/variables.scss';
 import './scss/reset.css';
 
 export default function startRun() {
