@@ -1,0 +1,14 @@
+.session-list {
+  .session {
+    padding: 12px 24px;
+  }
+  .name {
+    display: flex;
+    justify-content: space-between;
+  }
+  .time,
+  .summary {
+    font-size: 12px;
+    color: var(--second-normal-color);
+  }
+}
