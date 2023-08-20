@@ -24,7 +24,7 @@ class ServiceCollection {
   }
 }
 
-class AppService {
+export class AppService {
   constructor(
     private _services = new ServiceCollection()
   ) {
@@ -58,8 +58,9 @@ export default (function service() {
   
   serviceCollection.set(InstantiationService.id, new InstantiationService());
 
-  // todo promise
-  serviceCollection.set(SessionService.id, SessionService.instance());
+  SessionService.instance().then((instance) => {
+    serviceCollection.set(SessionService.id, instance);
+  });
 
   const _service = new AppService(serviceCollection);
 

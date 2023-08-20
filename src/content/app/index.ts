@@ -1,5 +1,5 @@
 const app = {
-  router: '/home',
+  router: '/message',
   component: () => import('./App'),
 };
 

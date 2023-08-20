@@ -1,7 +1,6 @@
 import {useContext, useEffect} from 'react';
 import {once} from '@/base/functional';
 import fetch from 'base/fetch';
-import {SessionManager} from '../session/SessionManager';
 import {ContextState} from '../State';
 import type {State} from '../State';
 
@@ -12,14 +11,11 @@ export default function useInitialize() {
     fetch<State>('/user/userInfo', {
       method: 'get',
     }).then(({content}) => {
-      SessionManager.instance().then(((sessionManager) => {
-        dispatch({
-          ...content,
-          sessionManager, 
-        } as State);
-      }));
+      dispatch({
+        ...content,
+      } as State);
     });
-  }), [dispatch, SessionManager]);
+  }), [dispatch]);
 
   return state;
 }
