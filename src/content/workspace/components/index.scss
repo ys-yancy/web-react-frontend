@@ -1,0 +1,15 @@
+.tools-container {
+  display: grid;
+  padding: 32px 0;
+  width: 70vw;
+  height: 66vh;
+  margin: 0 auto;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 92px);
+  grid-auto-rows: 92px;
+  grid-auto-flow: dense;
+  box-sizing: border-box;
+  position: relative;
+  color: beige;
+  z-index: 0;
+}

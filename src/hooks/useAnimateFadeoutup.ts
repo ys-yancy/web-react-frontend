@@ -7,7 +7,7 @@ const useAnimateFadeoutup = <T extends HTMLElement>() => {
 
   const handleClick = useCallback(async () => {
     if ($interactive.current) {
-      $interactive.current.style.cssText = 'display: inline-block; opacity: 1;';
+      $interactive.current.style.cssText = 'will-change: all; display: inline-block; opacity: 1;';
 
       await sleep(1100);
       

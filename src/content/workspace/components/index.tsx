@@ -1,9 +1,10 @@
 import React from 'react';
 import Meriter from './meriter/Meriter';
+import './index.scss';
 
 const WorkspaceTools: React.FC = () => {
   return (
-    <div className="tools-container" style={{width: '70vw', }}>
+    <div className="tools-container">
       <Meriter/>
     </div>
   );
