@@ -1,0 +1,24 @@
+.workspace-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .glass-masker {
+    display: none;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, .1);
+    backdrop-filter: saturate(120%) blur(8px);
+  }
+  &.glass {
+    .wallpaper {
+      transform: scale(1.1);
+    }
+    .glass-masker {
+      display: block;
+    }
+  }
+}

@@ -154,3 +154,22 @@ ins {
   height: calc(100% - 45px - 50px);
   overflow: hidden;
 }
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.animate-fadeoutup {
+  animation-name: fadeOutUp;
+}
+
+.animate-animated {
+  animation-duration: var(--animate-duration);
+  animation-fill-mode: both;
+}

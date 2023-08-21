@@ -1,7 +1,7 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import {createRoot} from 'react-dom/client';
 import ContextProvider from './context/Context';
-import InstantiationService from './services/InstantiationService';
+// import InstantiationService from './services/InstantiationService';
 import service from './services/Service';
 import Router from './router';
 import './scss/variables.scss';
@@ -19,10 +19,13 @@ export default function startRun() {
       </React.StrictMode>
     );
   };
+
+  render(service);
+  return;
   
-  service.invoke((accessor) => {
-    accessor.get<InstantiationService>(InstantiationService.id).ready(() => {
-      render(service);
-    })
-  });
+  // service.invoke((accessor) => {
+  //   accessor.get<InstantiationService>(InstantiationService.id).ready(() => {
+  //     render(service);
+  //   });
+  // });
 }

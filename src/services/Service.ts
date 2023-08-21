@@ -58,9 +58,9 @@ export default (function service() {
   
   serviceCollection.set(InstantiationService.id, new InstantiationService());
 
-  SessionService.instance().then((instance) => {
-    serviceCollection.set(SessionService.id, instance);
-  });
+  // SessionService.instance().then((instance) => {
+  //   serviceCollection.set(SessionService.id, instance);
+  // });
 
   const _service = new AppService(serviceCollection);
 
