@@ -1,0 +1,1 @@
+import './buddha.scss';

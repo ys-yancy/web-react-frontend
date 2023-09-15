@@ -1,0 +1,14 @@
+.calendar {
+  .content {
+    width: 158px;
+    height: 158px;
+    margin: 0 auto;
+    grid-row: span 2;
+    grid-column: span 2;
+    text-align: center;
+    border-radius: 18px;
+    color: #000;
+    background-color: #ffffff1a;
+    box-shadow: 2px 2px 10px #f9f6f60d;
+  }
+}

@@ -5,17 +5,17 @@
   .count,
   .interactive {
     position: relative;
-    padding: 10px 0;
+    padding-top: 16px;
   }
   .count-content {
-    font-size: 13px;
-    border-radius: 10px;
     padding: 1px 10px;
+    font-size: 14px;
+    border-radius: 10px;
     background-color: rgb(255, 240, 224);
     color: rgb(75, 41, 3);
   }
   .interactive {
-    margin: 2px 0 6px;
+    margin: 10px 0 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,5 +32,8 @@
     margin: 0 auto 12px;
     transition: all .3s;
     pointer-events: all;
+    &:active {
+      width: 80px;
+    }
   }
 }
