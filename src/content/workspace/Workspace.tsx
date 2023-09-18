@@ -31,7 +31,8 @@ const Workspace: React.FC = (props) => {
 
   const scheduleSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.code === 'Enter') {
-      SearchInternals.open(keyword);
+      cleanSearchContent();
+      SearchInternals.openGoogle(keyword);
     }
   };
 

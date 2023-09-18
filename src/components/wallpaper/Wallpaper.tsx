@@ -4,7 +4,7 @@ import './style';
 
 const Wallpaper: React.FC = () => {
   return (
-    <img src={InternalWallpaper} className="wallpaper" />
+    <img alt="wallpaper" src={InternalWallpaper} className="wallpaper" />
   )
 };
 

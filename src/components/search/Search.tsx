@@ -5,8 +5,11 @@ import SearchIcon from './images/search.png';
 import './style';
 
 export const SearchInternals = {
-  open: (keyword: string) => {
+  openBaidu: (keyword: string) => {
     window.open('https://www.baidu.com/s?wd=' + keyword);
+  },
+  openGoogle: (keyword: string) => {
+    window.open('https://www.google.com/search?q=' + keyword)
   }
 };
 

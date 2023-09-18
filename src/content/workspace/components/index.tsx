@@ -1,6 +1,6 @@
 import React from 'react';
 import Meriter from './meriter';
-import Calendar from './calendar';
+// import Calendar from './calendar';
 import Buddha from './buddha';
 import './index.scss';
 
@@ -8,7 +8,7 @@ const WorkspaceTools: React.FC = () => {
   return (
     <div className="tools-container">
       <Meriter />
-      <Calendar />
+      {/* <Calendar /> */}
       <Buddha />
     </div>
   );
